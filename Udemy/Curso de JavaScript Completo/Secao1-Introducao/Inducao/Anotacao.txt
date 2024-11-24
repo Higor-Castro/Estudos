@@ -1,0 +1,10 @@
+Oque é JavaScript
+JS e uma lingagem interpretada (não compilada)
+Tipagem Dinânima fraca
+Multiparadigma
+Principal linguagem Client-side
+Pode rodar no servidor com NodeJS 
+
+Sempre Deixar o arquivo JavaScript no final do body no html, pois assim ira amentar a performasse do site, sendo assim o site ficará mais rápido.
+
+ 

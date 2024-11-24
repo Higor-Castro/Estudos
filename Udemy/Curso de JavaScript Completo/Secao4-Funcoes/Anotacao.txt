@@ -1,0 +1,33 @@
+Funções em JS
+São tipos de objetos com a incrível capacidade de serem invocadas, ou seja, são blocos de codigos que podem ser chamadas em qualquer parte do codigo.
+
+objetos de primeira classe
+ Funções em JS são tratadas como qualquer outro objeto.
+ - Passadas como parâmetros para outras funções (call back);
+
+ - Atribuìdas em propriedades de objetos(métodos);
+ 
+- Retornadas como resultados de outra função;
+
+- Podem ter suas próprias propriedades.
+
+Para fazer uma função alto declarada em JS e só fazer assim:
+ (function(passar os parâmetros)
+ {Conteudo da função})
+ (colocar os valores dos parâmetros), esse tipo de função tem como principal fundamento ser utilizado para não poluir a função global.
+
+
+ - `arguments` é um objeto disponível em todas as funções JavaScript que contém os argumentos passados para a função.
+- Ele se parece com um array, mas não tem todos os métodos de array (como `map`, `forEach`).
+- `arguments` é útil para acessar todos os parâmetros passados, mesmo se a função não os definiu explicitamente.
+
+a propriedades arguments não funciona em arrow functions
+
+
+A propriedade COUNT serve para contar o numero de vezes que uma função ou objeto foi chamado EXEMPLO:
+function fn (){
+    fn.count++
+    console.log("Olá Mundo")
+}
+fn.count = 0
+fn()

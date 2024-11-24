@@ -1,0 +1,16 @@
+Tipos de comentários
+
+// uma única linha
+
+
+/* 
+  Varias linhas 
+*/
+
+
+A linguagem JavaScript, é uma linguagem Case Sensitive, ou seja, ela diferencia letra minúscula de letra maiúscula.
+
+O JavaScript tem palavras reservadas, ou seja, não poder colocar qualquer palavra como uma variável. Para saber quais palavras são so pesquisar sobre "palavras reservadas em JavaScript" lá ira ter uma lista com palavras reservadas. 
+
+
+O use strict deixa o JavaScript mais seguro.(OBS: Sempre deixa o use strict na primeira linha)

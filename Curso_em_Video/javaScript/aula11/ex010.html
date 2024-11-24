@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nascionalidade</title>
+    <style>
+        body{
+            background-color: aqua;
+            font-size: 30px;
+            color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>controle de nascionalidade</h1>
+    <h2>Informe seu país de origem</h2>
+    <input type="text" name="txt" id="txt">
+    <input type="button" value="mostrar" id="btn">
+    <p id="res">Resultado </p>  
+        <script>
+            var btn = document.querySelector('#btn')
+            btn.addEventListener('click', click);
+          
+            function click() {
+              var txt = document.querySelector('#txt');
+              var res = document.querySelector('#res');
+              if (txt.value.toUpperCase() !== "BR") {
+                res.innerHTML = `Seu país de origem é ${txt.value}, portanto você é <strong>estrangeiro</strong>`;
+              } else {
+                res.innerHTML = `Você é do <strong>Brasil!!</strong>`;
+              }
+            }
+            
+          </script>
+       
+</body>
+</html>

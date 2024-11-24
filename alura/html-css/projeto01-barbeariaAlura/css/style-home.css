@@ -1,0 +1,52 @@
+@charset "uft-8";
+
+
+header{
+    
+    text-indent: 30px;
+}
+img{
+    width: 100%;
+}
+div.principal{
+    background-color: lightgray;
+padding: 30px;
+margin-top: 0px;}
+    
+   h2{
+    text-align: center;
+   }
+   p{
+       text-align: center;
+      
+    }
+  
+   p#missao{  
+   font-weight: 30px;
+}
+   em > strong{
+       color: red;
+     
+   }
+   div.secundaria{
+       background-color: white;
+       padding: 20px;
+       
+   }
+   h3{
+    text-align: center;
+    
+}
+   ul{
+       font-style: italic;
+       display: inline-block;
+       vertical-align: top;
+       width: 20%;
+       margin-right: 20%;
+      }
+  
+img.beneficios{
+    width: 50%;
+   
+}
+

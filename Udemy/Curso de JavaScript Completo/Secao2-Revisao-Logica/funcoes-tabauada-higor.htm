@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <header>
+        <h1>tabuada</h1>
+    </header>
+    <main>
+        <p>Digita o numero da tabuada:</p>
+        <input type="number" name="number" class="numero">
+        <button class="but_resultado">Resultado</button> 
+        <button class="but_limpar">Limpar</button>
+        <ul class="mostrar_Resultado">
+
+
+        </ul>
+
+    </main>
+
+
+    <script>
+        let numero = document.querySelector(".numero");
+        let mostrar_resultado = document.querySelector('.mostrar_Resultado');
+        let a = document.querySelector('.but_resultado');
+        let b = document.querySelector('.but_limpar');
+
+        a.addEventListener('click', mostrarTabuada);
+        b.addEventListener('click', Limpar);
+        function mostrarTabuada (){
+            let msg = ''
+            for (let x = 0; x < 11; x++){
+                msg += `<li> ${x} X ${Number(numero.value)} = ${Number(numero.value) * x}</li><br>`
+            }
+            mostrar_resultado.innerHTML = msg
+        }
+
+        function Limpar (){
+            mostrar_resultado.innerHTML = ``
+        }
+    
+
+
+    </script>
+
+
+    
+</body>
+</html>

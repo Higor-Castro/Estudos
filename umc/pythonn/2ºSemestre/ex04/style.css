@@ -1,0 +1,126 @@
+body {
+
+    font-family: Arial, sans-serif;
+
+    margin: 20px;
+
+    background-color: #007bff;
+
+}
+
+h1 {
+
+    text-align: center;
+   background-color: rgb(31, 163, 150);
+   color: aqua;
+
+}
+
+#aluno-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 300px;
+
+    margin: 0 auto;
+
+    padding: 10px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+}
+
+label {
+
+    margin-top: 10px;
+
+}
+
+button {
+
+    margin-top: 10px;
+
+    padding: 5px;
+
+    background-color: #007bff;
+
+    color: #fff;
+
+    border: none;
+
+    cursor: pointer;
+
+}
+
+button:hover {
+
+    background-color: #0056b3;
+
+}
+
+#alunos-list {
+
+    margin-top: 20px;
+
+    width: 300px;
+
+    margin: 0 auto;
+
+}
+
+ul {
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+li {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    padding: 5px 10px;
+
+    margin: 5px 0;
+
+}
+
+.aluno-details {
+
+    display: none;
+
+}
+
+.delete-button {
+
+    background-color: #ff3333;
+
+    color: #fff;
+
+    border: none;
+
+    padding: 3px 5px;
+
+    cursor: pointer;
+
+}
+
+.delete-button:hover {
+
+    background-color: #cc0000;
+    color: antiquewhite;
+
+}

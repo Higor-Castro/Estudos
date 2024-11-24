@@ -1,0 +1,118 @@
+temos três tipos de declaração de variáveis (var,let,const)
+
+Var -> ES5 - cross-browser (funciona em todos os browser)
+
+let e const -> ES2015
+
+Para verificar tipo de uma variável e so utilizar o "typeof".
+EX:
+let msg : "Olá mundo";
+console.log(typeof msg)
+ele retornará o tipo da variável no console.
+
+
+Existe 3 formas de converte um tipo da variável String para number e são elas ( parseInt, parseFloat, number() )
+
+EX(parseInt):
+let n1 = "10";
+n1 = parseInt (n1); "Esse método só funciona para numero do tipo inteiro, ou seja, numero que não tenha virgula em sua casa decimal."
+
+
+EX(parseFloat):
+
+let n2 = "10.2622625";
+n2 = parseFloat (n2); "Esse método só funciona para numero do tipo real, ou seja, numero que possa  ter virgula em sua casa decimal."
+
+
+EX(number() ) 
+Let n3 = "41.45646";
+let n4 = "88";
+let calculo;
+calculo = number(n3) + number(n4);
+"Esse metodo e o eficiente, pois ele pode transformar quanto em unteiro e quanto real, ele declara que é um numero."
+
+
+
+para guardar valores determinando o valor que seria usado em IF E ELSE, que seria guardado em uma só variável dependo o resultado e só utilizar a seguinte expressão:
+let msg = (idade >= 18 ) ? "retorna true" : "retorna false"
+
+EX:
+
+	Jeito Ruim
+let idade = 18;
+let msg = "";
+if (idade >= 18){
+	msg = "maior de idade";
+}
+else{
+	msg = "menor de idade";
+}
+
+
+	Jeito Pratico
+let idade = 18;
+let msg = (idade >= 18 ) ? "maior de idade" : "menor de idade"
+
+
+Valores que são considerado falso = 0,"",NaN,undedfined,null,false
+
+Valores que são considerado Verdadeiro = Todos os demais valores além desse falsos.
+
+
+ existe 3 tipos de funções 
+
+	Declaração de função 
+	EX:
+        function ola() {
+            document.write("ola mundo")
+        }
+
+
+
+	Expressão de função
+	EX:   
+        const ola2 = function () {
+            console.log("ola mundo de function expression")
+        }
+
+
+
+	Arrow functions
+	EX:
+        const ola3 = () => {
+            console.log("ola mundo de arrow functions")
+        }
+
+
+
+Para acessar uma propriedade de um obijeto com um laço de repetição com pro exemplo o FOR e só fazer da seguinte maneira:
+Const pessoa  = {
+	nome:"higor",
+	idade: 19,
+	email: "higor@gmail.com.br"
+}
+
+for (let prop in pessoa){
+	console.log(prop)
+}
+
+Repara que tem um IN no laço for ele faz a função de acessar cada propriedade do objeto pessoa.
+
+
+Para criar números Randomicos, ou seja, números aleatórios, e utizar o método "Math.randow()"
+
+
+Para gerar um erro em JS podemos utilizar o método " throw Error ("Escrever o erro que quiser!!!") "
+
+Temos o método "try catch " o try ele tentara fazer a função, mais caso dê erro o catch vem como uma alternativa de demonstração do erro, para sugerir a resolução do problema.
+EX:
+
+try{
+    soma = sum(3,"A")
+} Catch(e){
+     Alert("ocorreu um erro, informe apenas números")
+}
+
+
+
+

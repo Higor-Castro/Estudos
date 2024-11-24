@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Pesquisa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <div class="navbar">
+            <h1>DIO.me</h1>
+            <div class="navbar-buttons">
+                <a href="../index.html">Entrar</a>
+                <a href="#">Pesquisa</a>
+            </div>
+        </div>
+    <div class="container">
+        <h1>Pesquisa de Satisfação</h1>
+        <form action="registrar.jsp" method="post">
+            <label class="labelPergunta">Você está satisfeito com nossa plataforma?</label>
+            <input type="radio" id="satisfeito-sim" name="satisfeito" value="1" required>
+            <label for="satisfeito-sim">Sim</label>
+            <input type="radio" id="satisfeito-nao" name="satisfeito" value="0">
+            <label for="satisfeito-nao">Não</label><br>
+
+            <label class="labelPergunta">Você recomendaria nossos cursos e conteúdos para outras pessoas?</label>
+            <input type="radio" id="recomendaria-sim" name="recomendaria" value="1" required>
+            <label for="recomendaria-sim">Sim</label>
+            <input type="radio" id="recomendaria-nao" name="recomendaria" value="0">
+            <label for="recomendaria-nao">Não</label><br>
+
+            <label class="labelPergunta">Você encontrou facilmente os cursos que procurava?</label>
+            <input type="radio" id="informacoes-sim" name="informacoes" value="1" required>
+            <label for="informacoes-sim">Sim</label>
+            <input type="radio" id="informacoes-nao" name="informacoes" value="0">
+            <label for="informacoes-nao">Não</label><br>
+
+            <label class="labelPergunta">Você se sente seguro ao usar nossa plataforma?</label>
+            <input type="radio" id="seguro-sim" name="seguro" value="1" required>
+            <label for="seguro-sim">Sim</label>
+            <input type="radio" id="seguro-nao" name="seguro" value="0">
+            <label for="seguro-nao">Não</label><br>
+
+            <label class="labelPergunta">Você gostaria de ver novos cursos no futuro?</label>
+            <input type="radio" id="novos-recurso-sim" name="novos_recurso" value="1" required>
+            <label for="novos-recurso-sim">Sim</label>
+            <input type="radio" id="novos-recurso-nao" name="novos_recurso" value="0">
+            <label for="novos-recurso-nao">Não</label><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

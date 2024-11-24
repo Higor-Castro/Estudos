@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1E192C;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #1E192C;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar h1 {
+    margin-left: 20px;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.navbar-buttons {
+    margin-right: 20px;
+}
+
+.navbar-buttons a {
+    color: white;
+    background-color: #6a0dad;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-buttons a:hover {
+    background-color: #8a2be2;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 60px;
+}
+
+.container__titulo {
+    margin-bottom: 20px;
+}
+
+
+.container__titulo h1 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+
+
+.container__titulo p {
+    margin-top: 5px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario input[type="password"],
+.formulario input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.formulario input[type="text"]:focus,
+.formulario input[type="email"]:focus,
+.formulario input[type="password"]:focus,
+.formulario input[type="number"]:focus
+{
+    border-color: #007bff;
+    outline: none;
+}
+
+.formulario input[type="submit"], a {
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+p{
+    font-size: 24px;
+    color: white;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>redar velocidade</title>
+    <style>
+        body{
+            background-color: aqua;
+            font-size: 30px;
+            color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Monitoramento de velocidade</h1>
+    <input type="number" name="vel" id="vel">
+    <input type="button" value="Proximo" id="chek">
+    <p id="res">Resultado </p>
+    <script>
+        var chek = document.querySelector('#chek')
+        chek.addEventListener('click',click)
+        function click(){
+            var vel = document.querySelector('#vel')
+            var res = document.querySelector('#res')
+            var n1 = Number(vel.value)
+            if( n1 > 50){
+                res.innerHTML = `a velocidade do seu carro é ${n1}} Km/h <br/> Você ultrapassou a velocidade permitida. <strong>MULTADOO!</strong>!`
+            }
+            else{
+                res.innerHTML = `a velocidade do seu carro é ${n1} Km/h <br/> Parabéns <strong>você não ultrapassou</strong> a velocidade!!`
+            }
+        }
+    </script>
+</body>
+
+
+</html>

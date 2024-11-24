@@ -1,0 +1,125 @@
+/* Estilização global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1b29;
+    color: white;
+    padding-top: 80px; /* Espaço para o header */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #2b2a38;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre Sim e Não */
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    display: none;
+}
+
+/* Estilo para os rótulos dos botões de rádio */
+label {
+    cursor: pointer;
+    padding: 5px 10px; /* Aumentar área clicável */
+    border-radius: 5px;
+    background-color: #3a3a4f; /* Cor de fundo padrão */
+    transition: background-color 0.3s ease;
+}
+
+.labelPergunta{
+    background-color: #575777;
+    margin-bottom: 0;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #007bff; /* Cor ao selecionar */
+    color: white; /* Cor do texto ao selecionar */
+}
+
+input[type="radio"]:not(:checked) + label:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse sobre Não */
+    color: white; /* Cor do texto ao passar o mouse */
+}
+
+button, .butPesquisa {
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,.butPesquisa:hover {
+    background-color: #0056b3;
+}
+
+/* Estilização do header */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to top, #1c1b29, #1c1b29ea);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.navbar h1 {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.navbar-buttons a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #6c5ce7;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar-buttons a:hover {
+    background-color: #4b43d1;
+}
