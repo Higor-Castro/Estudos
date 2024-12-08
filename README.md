@@ -36,9 +36,20 @@ MySQL é um sistema de gerenciamento de banco de dados relacional. Ele é usado 
 
 ## 🚀 Como Usar
 
-1. Clone o repositório para sua máquina local:
-  Usando Git Bash colacar o seguinte comando:
-   ```SSH:
-   $ git clone git@github.com:Higor-Castor/Estudos.git
-   ```HTTPS:
-   git clone https://github.com/Higor-Castor/Estudos.git
+### 1. Clone o repositório para sua máquina local:
+
+Escolha o método que preferir para clonar o repositório!
+
+#### 💻 Usando **SSH** (se você configurou suas chaves SSH no GitHub):
+Se você preferir usar **SSH**, execute o seguinte comando:
+
+```bash
+git clone git@github.com:Higor-Castor/Estudos.git
+```
+
+#### 💻 Usando **HTTPS** (se você não configurou suas chaves SSH no GitHub):
+Se você preferir usar **HTTPS**, execute o seguinte comando:
+
+```bash
+git clone https://github.com/Higor-Castor/Estudos.git
+
