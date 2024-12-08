@@ -41,4 +41,4 @@ MySQL é um sistema de gerenciamento de banco de dados relacional. Ele é usado 
    ```SSH:
    $ git clone git@github.com:Higor-Castor/Estudos.git
    ```HTTPS:
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/Higor-Castor/Estudos.git
