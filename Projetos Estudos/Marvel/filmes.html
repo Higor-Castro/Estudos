@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel</title>
+    <link rel="stylesheet" href="assets/CSS/reset.css">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <link rel="stylesheet" href="assets/CSS/filmes.css">
+    <style>
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="login_titulo">MARVEL</h1>
+        <nav>
+            <ul>
+                <li><a href="personagens.html" >Personagens</a></li>
+                <li><a href="#" class="pagina-logada">Filmes</a></li>
+                <li><a href="hq.html">HQs</a></li>
+            </ul>
+        </nav>
+        <div class="user">
+           <span> &#x1F464;</span>
+            <a href="index.html">Sair</a>
+        </div>
+    </header>
+    <main>
+        <div class="filter">
+            <select id="filter-select">
+                <option value="default">Filtrar</option>
+                <option value="lancamento">Lançamento</option>
+                <option value="cronologia">Cronologia</option>
+            </select>
+        </div>
+        <div class="carousel-controls">
+            <span class="arrow" id="prev" aria-label="Anterior">&#8592;</span>
+            <span class="arrow" id="next" aria-label="Próximo">&#8594;</span>
+        </div>
+        <section class="cards" id="carousel">
+            <article class="card card-IronMan" data-lancamento="2008" data-cronologia="3">
+                <div class="card-content">
+                    <h2>Homem de Ferro</h2>
+                    <p>Tony Stark (Robert Downey Jr.) é um industrial bilionário, que também é um brilhante inventor, ao ser sequestrado, 
+                    ele é obrigado a construir uma arma devastadora, mas ao invés disso, cria uma armadura capaz de mudar a história.</p>
+                    <input type="button" value="ver detalhes" class="details">
+                </div>
+                <div class="card-details">
+                    <img src="assets/Imagens/IronMan.png" class="img-diferente" alt="Homem de Ferro">
+                        <h2 class="h2-diferente">Homem de Ferro</h2>
+                        <p class="p1 p-diferente">Tony Stark (Robert Downey Jr.) é um industrial bilionário, que também é um brilhante inventor, 
+                        ao ser sequestrado, ele é obrigado a construir uma arma devastadora, mas ao invés disso, cria uma armadura capaz de mudar a história.</p>
+                        <p class="p2 p-diferente">Disponível em streaming:</p>
+                        <img src="assets/Imagens/disney.png" class="logo" alt="disney">
+                        <p class="p-critica p2 p-diferente2">Crítica</p>
+                        <div class="rating rating-diferente">
+                            ★★★☆☆
+                        </div>
+                        <span class="exit">	&#8855;</span>
+                </div>
+                
+            </article>
+
+            <article class="card card-IronMan2" data-lancamento="2010" data-cronologia="4">
+                <div class="card-content">
+                    <h2>Homem de Ferro 2</h2>
+                    <p>O mundo já sabe que o inventor bilionário Tony Stark (Robert Downey Jr.) é o super-herói blindado Homem de Ferro. 
+                    Sofrendo pressão do governo, da mídia e do público para compartilhar sua tecnologia com as forças armadas</p>
+                        <input type="button" value="ver detalhes" class="details">                   
+                </div>
+                <div class="card-details">
+                    <img src="assets/Imagens/IronMan2.png"  alt="Homem de Ferro 2">
+                        <h2>Homem de Ferro 2</h2>
+                        <p class="p1">O mundo já sabe que o inventor bilionário Tony Stark (Robert Downey Jr.) é o super-herói blindado Homem de Ferro. 
+                            Sofrendo pressão do governo, da mídia e do público para compartilhar sua tecnologia com as forças armadas</p>
+                            <p class="p2">Disponível em streaming:</p>
+                            <img src="assets/Imagens/disney.png" class="logo" id="logo-diferente" alt="disney">
+                            <p class="p-critica p2">Crítica</p>
+                        <div class="rating">
+                            ★★★★☆
+                        </div>
+                        <span class="exit">	&#8855;</span>
+                </div>
+            </article>
+
+            <article class="card card-Thor" data-lancamento="2011" data-cronologia="5">
+                <div class="card-content">
+                    <h2>Thor</h2>
+                    <p>Quando é banido do reino de Asgard e exilado na Terra, o arrogante guerreiro Thor (Chris Hemsworth) é obrigado a lutar para reaver seus poderes perdidos. </p>
+                        <input type="button" value="ver detalhes" class="details">
+                </div>
+                <div class="card-details">
+                    <img src="assets/Imagens/Thor.png" class="img-diferente" alt="Thor">
+                        <h2 class="h2-diferente">Thor</h2>
+                        <p class="p1 p-diferente">Quando é banido do reino de Asgard e exilado na Terra, o arrogante guerreiro Thor (Chris Hemsworth) é obrigado a lutar para reaver seus poderes perdidos. </p>
+                        <p class="p2 p-diferente">Disponível em streaming:</p>
+                        <img src="assets/Imagens/disney.png" class="logo"  alt="disney">
+                        <p class="p-critica p2 p-diferente2">Crítica</p>
+                        <div class="rating rating-diferente">
+                            ★★★★★
+                        </div>
+                        <span class="exit">	&#8855;</span>
+                </div>
+            </article>
+
+            <article class="card card-captain-america" data-lancamento="2011" data-cronologia="1">
+                <div class="card-content">
+                    <h2>Capitão América</h2>
+                    <p>Em Capitão América: O Primeiro Vingador, conhecemos a história de Steve Rogers (Chris Evans) e como ele se tornou o melhor soldado do mundo. </p>
+                        <input type="button" value="ver detalhes" class="details">
+                </div>
+
+
+                <div class="card-details">
+                    <img src="assets/Imagens/captainAmerica.png" alt="Capitão América">
+                    <h2>Capitão América: <br> Primeiro Vingador</h2> <br>
+                    <p class="p1">Em Capitão América: O Primeiro Vingador, conhecemos a história de Steve Rogers (Chris Evans) e como ele se tornou o melhor soldado do mundo. </p>
+                    <p class="p2">Disponível em streaming:</p>
+                    <img src="assets/Imagens/disney.png" class="logo" id="logo-diferente" alt="disney">
+                    <p class="p-critica p2">Crítica</p>
+                    <div class="rating">
+                        ★★★★☆
+                    </div>
+                    <span class="exit">	&#8855;</span>
+                </div>
+            </article>
+
+            <article class="card card-captain-marvel" data-lancamento="2019" data-cronologia="2">
+                <div class="card-content">
+                    <h2>Capitã Marvel</h2>
+                    <p>Capitã Marvel, parte do exército de elite dos Kree, uma raça alienígena, encontra-se no meio de uma batalha entre seu povo e os Skrulls. </p>
+                        <input type="button" value="ver detalhes" class="details">
+                </div>
+                <div class="card-details">
+                    <img src="assets/Imagens/captainMarvel.png" class="img-diferente" alt="Capitã Marvel">
+                        <h2 class="h2-diferente">Capitã Marvel</h2>
+                        <p class="p1 p-diferente">Em Capitão América: O Primeiro Vingador, conhecemos a história de Steve Rogers (Chris Evans) e como ele se tornou o melhor soldado do mundo. </p>
+                        <p class="p2 p-diferente">Disponível em streaming:</p>
+                        <img src="assets/Imagens/disney.png" class="logo"  alt="disney">
+                        <p class="p-critica p2 p-diferente2">Crítica</p>
+                        <div class="rating rating-diferente">
+                            ★★★★☆
+                        </div>
+                        <span class="exit">	&#8855;</span>
+                </div>
+            </article>
+
+        </section>
+    </main>
+</body>
+<script src="assets/JS/filmes.js"></script>
+</html>
