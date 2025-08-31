@@ -1,0 +1,58 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manter Produto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            label {
+                display: inline-block;
+                width: 100px;
+                margin-top: 10px;
+            }
+            input {
+                margin-top: 10px;
+                padding: 5px;
+            }
+            button {
+                margin: 10px 5px;
+                padding: 8px 15px;
+                border: none;
+                background-color: #007BFF;
+                color: white;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+            button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Manter Produto</h1>
+        <div>
+            <form action="ManterProduto" method="GET">
+                <label>ID:</label>
+                <input type="text" name="txtid" placeholder="Digite ID"><br>
+
+                <label>Descrição:</label>
+                <input type="text" name="txtdescricao" placeholder="Digite descrição"><br>
+
+                <label>Preço:</label>
+                <input type="text" name="txtpreco" placeholder="Digite Preço"><br>
+
+                <!-- Botões para CRUD -->
+                <button type="submit" name="btnop" value="CADASTRAR">Cadastrar</button>
+                <button type="submit" name="btnop" value="ATUALIZAR">Atualizar</button>
+                <button type="submit" name="btnop" value="CONSULTAR">Consultar</button>
+                <button type="submit" name="btnop" value="LISTAR">Listar</button>
+                <button type="submit" name="btnop" value="DELETAR">Deletar</button>
+            </form>
+        </div>
+    </body>
+</html>
