@@ -1,0 +1,99 @@
+
+
+    Every
+O método every em JavaScript verifica se todos os elementos de um array atendem a uma condição. 
+Ele retorna true se todos passarem no teste e false se pelo menos um falhar
+
+    Some
+O método some em JavaScript verifica se pelo menos um elemento de um array atende a uma condição.
+Ele retorna true se ao menos um elemento passar no teste e false se nenhum passar.
+
+    Filter 
+O método Filter é utilizado para filtar a array original, onde ela cria uma outra array que atenda sa condição da filtragem
+
+    forEach 
+O método forEach é usado para percorrer todos os elementos de um array e executar uma função para cada um deles. Ele não retorna um novo array, apenas executa a ação para cada item.
+
+    Map
+O método map é usado para percorrer um array e criar um novo array com os resultados da transformação aplicada a cada elemento.
+
+    indexOf
+indexOf é um método que procura um valor em uma array ou string e retorna o índice da primeira ocorrência. Se não encontrar, retorna -1. Ele não altera a array ou string original.
+
+    lastIndexOf
+lastIndexOf é um método que retorna o índice da última ocorrência de um valor em uma array ou string. Se não encontrar, retorna -1. 
+Assim como o indexOf, ele não altera o conteúdo original.
+
+    Includes
+includes verifica se um valor existe em uma array ou string.
+Retorna true se encontrar, ou false se não encontrar.
+
+    find
+find retorna o primeiro item de uma array que satisfaz uma condição.
+Se não encontrar, retorna undefined.
+
+    findIndex
+findIndex retorna o índice (posição) do primeiro elemento que satisfaz uma condição.
+Se não encontrar, retorna -1.
+
+    toStringafac
+O método toString em JavaScript converte um array em uma string, onde os elementos são separados por vírgulas.
+
+    join
+O método join em JavaScript une todos os elementos de um array em uma única string, com um separador personalizado que você escolher.
+
+    concat
+O método concat em JavaScript é usado para juntar dois ou mais arrays, sem modificar os arrays originais. Ele retorna um novo array.
+
+    Push
+push adiciona um ou mais elementos no final do array e retorna o novo comprimento.
+
+    Pop
+pop remove o último elemento do array e o retorna.
+
+    Shift
+shift remove o primeiro elemento do array e o retorna.
+
+    Unshift
+unshift adiciona um ou mais elementos no início do array e retorna o novo comprimento.
+
+    Slice
+slice retorna uma cópia de parte do array, sem modificar o original.
+array.slice(início, fim)
+
+    Splice
+splice altera o array original, removendo ou adicionando elementos.
+array.splice(início, quantos, item1, item2, ...)
+
+    Reverse
+O metodo reverse ele simplesmente reverte a ordem da array
+
+    Reduce
+reduce serve para reduzir um array a um único valor, aplicando uma função acumuladora
+array.reduce((acumulador, valorAtual) => novaSoma, valorInicial)
+
+    Array.from
+O método Array.from() cria um novo array a partir de algo que parece um array (como strings, NodeLists, ou objetos iteráveis).
+
+    Array.of
+O método Array.of() cria um novo array com os elementos passados como argumento, independentemente do tipo ou quantidade.
+
+    spread operator
+O spread operator (...) no JavaScript é usado para espalhar os elementos de um array, objeto ou string. Ele é muito útil para copiar, combinar ou passar valores de forma mais simples.
+
+    destructuring
+O destructuring (ou desestruturação) no JavaScript é uma forma rápida e limpa de extrair valores de arrays ou objetos e armazenar em variáveis.
+
+    For...in
+O **for...in** é uma estrutura de repetição do JavaScript usada para percorrer as propriedades de um objeto.
+
+    For...of
+O **for...of** é usado para percorrer elementos de iteráveis, como arrays, strings, Map, Set, entre outros.
+
+
+ call() e apply()
+Permitem executar uma função com um this diferente (mudar o dono da função).
+
+call(thisArg, arg1, arg2...) → argumentos separados
+
+apply(thisArg, [arg1, arg2...]) → argumentos em array

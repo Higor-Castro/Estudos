@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Error, obcaecati culpa eligendi qui odio perferendis a tenetur porro mollitia ipsa deserunt atque amet expedita deleniti eos necessitatibus enim impedit assumenda.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Error, obcaecati culpa eligendi qui odio perferendis a tenetur porro mollitia ipsa deserunt atque amet expedita deleniti eos necessitatibus enim impedit assumenda.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Error, obcaecati culpa eligendi qui odio perferendis a tenetur porro mollitia ipsa deserunt atque amet expedita deleniti eos necessitatibus enim impedit assumenda.</p>
+    <script>
+        const arr1 = new Array(1, 2, 3, 4, 5)
+        console.log(arr1)
+        const arr2 = Array.from(arr1)
+        console.log("Array From: ",arr2)
+
+        const arr3 = Array.of(3)
+        console.log("Array Of: ",arr3)
+
+        let paragrafos = document.querySelectorAll('p')
+        paragrafos = Array.from(paragrafos)
+        paragrafos.map((item, index) => {
+            item.textContent= `${++index} - ${item.textContent + 1}`
+        })
+    </script>
+</body>
+</html>

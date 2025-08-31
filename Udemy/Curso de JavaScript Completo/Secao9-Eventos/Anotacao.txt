@@ -1,0 +1,123 @@
+O QUE SÃO EVENTOS  
+São ações ou ocorrências que acontecem na página e que o JavaScript pode detectar para reagir, como:  
+- Seguir um link  
+- Submeter um formulário  
+- Carregar uma página ou recurso do servidor  
+- Digitar um texto  
+- Mover o mouse  
+
+O QUE SÃO EVENT HANDLERS  
+Funções executadas quando um evento ocorre.
+
+DISPARADOR DE EVENTOS  
+Elemento que dispara o evento, ou seja, o elemento ao qual o event handler está atrelado.
+
+Event Handler - DOM Level 0  
+<button onclick="funcao()" id="btn">...</button>  
+
+const btn = document.getElementById("btn")  
+btn.onclick = funcao  
+
+Event Handler - DOM Level 2  
+const btn = document.getElementById("btn")  
+btn.addEventListener(evento, funcao, fase)  
+
+- evento: tipo de evento (ex: "click", "mouseover")  
+- função: callback a ser executada  
+- fase:  
+  - true → captura (de fora para dentro)  
+  - false → bolha (de dentro para fora, padrão)  
+
+Objeto evento  
+Funções handlers recebem por parâmetro um objeto do tipo evento, que pode ser nomeado para acessar suas propriedades.
+
+| Método                       | O que faz?                                                                           |  
+| ---------------------------- | ------------------------------------------------------------------------------------ |  
+| stopPropagation()            | Impede que o evento suba na árvore DOM, mas outros handlers no mesmo elemento ainda executam. |  
+| stopImmediatePropagation()   | Impede que o evento suba na árvore e bloqueia outros handlers no mesmo elemento.     |  
+
+Delegação de Eventos  
+Útil quando há muitos elementos filhos com eventos individuais. Atrela o evento ao pai e usa event.target para detectar o alvo.
+
+---
+
+Principais tipos de eventos e para que servem:
+
+Eventos de Mouse  
+- click: clique do mouse (botão esquerdo)  
+- dblclick: duplo clique  
+- mousedown: pressionar botão do mouse  
+- mouseup: soltar botão do mouse  
+- mouseover: passar o mouse sobre um elemento  
+- mouseout: tirar o mouse de um elemento  
+- mousemove: mover o mouse sobre um elemento  
+- contextmenu: abrir menu do botão direito do mouse  
+
+Eventos de Teclado  
+- keydown: tecla pressionada (começo)  
+- keyup: tecla liberada  
+- keypress: tecla pressionada (obsoleto, evitar usar)  
+
+Eventos de Formulário  
+- submit: envio do formulário  
+- reset: resetar formulário  
+- input: qualquer alteração em campos (texto, select, checkbox)  
+- change: mudança finalizada no campo (ex: select, checkbox)  
+- focus: quando o elemento recebe foco  
+- blur: quando o elemento perde o foco  
+
+Eventos da Janela/Documento  
+- load: carregamento completo da página ou recurso  
+- resize: redimensionamento da janela  
+- scroll: rolagem da página ou elemento  
+- beforeunload: antes de sair da página (exibe aviso de confirmação)  
+- unload: quando a página está sendo descarregada (uso restrito)  
+
+Eventos Touch (para dispositivos móveis)  
+- touchstart: toque inicial  
+- touchmove: movimento do dedo na tela  
+- touchend: fim do toque  
+
+Eventos de Drag and Drop  
+- dragstart: início do arrastar  
+- dragover: arrastar sobre área de soltar  
+- drop: soltar o elemento  
+
+Eventos de Animação e Transição  
+- animationstart: início de uma animação CSS  
+- animationend: fim de uma animação CSS  
+- transitionend: fim de uma transição CSS  
+
+---
+
+Outras formas de manipular eventos:
+
+Criar e disparar eventos manualmente:
+
+const evento = new Event("meuEvento")  
+elemento.dispatchEvent(evento)  
+
+---
+
+Resumo das fases de eventos:
+
+- Captura: o evento percorre do elemento pai para o filho (true no addEventListener)  
+- Bolha: o evento percorre do filho para o pai (false no addEventListener, padrão)  
+
+---
+
+
+removeEventListener (Remover Evento)
+
+- Usado para remover um evento após sua execução.
+- Evita sobrecarga na página e múltiplas execuções desnecessárias.
+- Ideal quando o evento deve acontecer só uma vez.
+
+Exemplo prático: botão de fechar mensagem.
+
+function fecharMensagem() {
+    mensagem.style.display = "none";
+    btnFechar.removeEventListener("click", fecharMensagem);
+}
+
+btnFechar.addEventListener("click", fecharMensagem);

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLcollection_vs_NodeList</title>
+
+    <style>
+        .container2{
+            background-color: #ccc;
+            padding: 15px;
+        }
+
+        .container2 p{
+            border: 1px solid red;
+            padding: 10px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>OPa</h1>
+    <h1>Teste DOM</h1>
+    <!-- beforbegin -->
+    <div class="container2">
+        <!-- afterbegin -->
+        <p>Paragrafo 1</p>
+        <p>Paragrafo 2</p>
+        <p>Paragrafo 3</p>
+        <!-- beforeend -->
+    </div>
+    <!-- afterend -->
+
+    
+
+    <div class="container">
+        <h3>Teste DOM !!!</h3>
+        <p>teste 1</p>
+        <p>Lorem<a href="#">Link</a></p>
+        <p>teste 2</p>
+
+        <h2>Lista</h2>
+        <ul >
+            <li>Item 1</li>
+            <li>Item 2
+                <ul>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                    <li>Item 5</li>
+                    <li></li>
+                </ul>
+            </li>
+            <li>Item <a href="#">Link</a></li>
+
+        </ul>
+    </div>
+
+    <script>
+// ==========================
+// CRIAÇÃO DE ELEMENTOS
+// ==========================
+
+// cria elemento <h1>
+const title = document.createElement("h1");
+
+// cria atributo id dinamicamente
+const atributo = document.createAttribute("id");
+atributo.value = "title1";
+title.setAttributeNode(atributo);
+
+// define atributos direto
+title.setAttribute("title", "Title inserido dinamicamente");
+title.setAttribute("style", "color: red;");
+
+// cria um nó de texto
+const text = document.createTextNode("Criar nós no DOM");
+
+// adiciona o nó de texto ao h1
+title.appendChild(text);
+
+// sobrescreve o conteúdo do elemento (substitui texto anterior)
+title.textContent = "texto inserido com textContent";
+
+// visualiza no console
+console.log(title);
+
+// ==========================
+// ADICIONANDO ELEMENTOS
+// ==========================
+
+// adiciona no final do container + texto extra
+document.querySelector(".container").append(title, "Teste Append");
+
+// adiciona no início do container + texto extra
+document.querySelector(".container").prepend(title, " Teste prepend");
+
+// ==========================
+// INSERTBEFORE
+// ==========================
+
+// cria outro elemento <h1>
+const title2 = document.createElement("h1");
+title2.textContent = "Titulo 2";
+
+// seleciona a lista ul
+const list = document.querySelector("ul");
+
+// seleciona o container
+const container = document.querySelector(".container");
+
+// insere title2 antes da lista
+container.insertBefore(title2, list);
+
+// insere title2 no início do container
+container.insertBefore(title2, container.firstChild);
+
+// ==========================
+// CLONAGEM E INSERÇÃO
+// ==========================
+
+// clona um subnível de ul (ul dentro de ul)
+let subLevel = document.querySelector("ul ul");
+subLevel = subLevel.cloneNode(true);
+
+// seleciona h2
+const h2 = document.querySelector("h2");
+
+// insere o subLevel clonado após o h2
+container.insertBefore(subLevel, h2.nextElementSibling);
+
+// ==========================
+// AFTER e BEFORE
+// ==========================
+
+// navega até o segundo parágrafo do container
+const seugundoParagrafo = container.firstElementChild
+    .nextElementSibling
+    .nextElementSibling
+    .nextElementSibling;
+
+// cria e insere um <span> depois do parágrafo
+const spnafter = document.createElement("span");
+spnafter.textContent = "span inserido com: ";
+seugundoParagrafo.after(spnafter, "After");
+
+// cria e insere um <span> antes do parágrafo
+const spnaBefore = document.createElement("span");
+spnaBefore.textContent = "span inserido com: ";
+seugundoParagrafo.before(spnaBefore, "Before");
+
+// ==========================
+// INSERTADJACENT
+// ==========================
+
+// seleciona outro container
+const container2 = document.querySelector(".container2");
+
+// insere HTML em diferentes posições
+container2.insertAdjacentHTML(
+    "afterbegin",
+    "<b> Texto inserido com insertAdjacentHTML com afterbegin </b>"
+);
+container2.insertAdjacentHTML(
+    "beforebegin",
+    "<b> Texto inserido com insertAdjacentHTML com beforebegin </b>"
+);
+container2.insertAdjacentHTML(
+    "beforeend",
+    "<b> Texto inserido com insertAdjacentHTML com beforeend </b>"
+);
+container2.insertAdjacentHTML(
+    "afterend",
+    "<b> Texto inserido com insertAdjacentHTML com afterend </b>"
+);
+
+// insere texto puro (não interpreta tags) no começo
+container2.insertAdjacentText(
+    "afterbegin",
+    "<b> Texto inserido com insertAdjacentText com afterbegin </b>"
+);
+
+// insere elemento <em> no final
+const em = document.createElement("em");
+em.textContent = "Texto com ênfase para usar insertAdjacentElement com beforeend";
+container2.insertAdjacentElement("beforeend", em);
+
+// ==========================
+// REMOÇÃO E SUBSTITUIÇÃO
+// ==========================
+
+// comentários para remoção de elementos:
+// elemento.remove()                   // remove o próprio elemento
+// elementoPai.removeChild(elemento)   // remove o filho
+// compatibilidade antiga:
+// list.parentElement.removeChild(list)
+
+// substituindo elementos
+const parent = document.body;
+const newChild = container.querySelector("h3");
+const oldChild = document.querySelector("h1");
+
+// substitui o primeiro <h1> do body pelo h3 encontrado no container
+parent.replaceChild(newChild, oldChild);
+
+
+          
+       </script>
+    
+</body>
+</html>

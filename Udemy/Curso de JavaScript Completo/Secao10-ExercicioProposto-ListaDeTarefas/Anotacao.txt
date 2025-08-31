@@ -1,0 +1,5 @@
+preventDefault evita que um formulario seja enviado em Hantlers
+
+.contains verifica se um elemento HTML está dentro de outro.
+div.contains(botao); // true se o botão estiver dentro da div
+

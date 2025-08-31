@@ -1,33 +1,158 @@
-Funções em JS
-São tipos de objetos com a incrível capacidade de serem invocadas, ou seja, são blocos de codigos que podem ser chamadas em qualquer parte do codigo.
+/**
+ * Funções em JavaScript - Anotações completas
+ *
+ * Funções são blocos de código reutilizáveis, chamados a qualquer momento.
+ * 
+ * Formas de declarar:
+ */
 
-objetos de primeira classe
- Funções em JS são tratadas como qualquer outro objeto.
- - Passadas como parâmetros para outras funções (call back);
-
- - Atribuìdas em propriedades de objetos(métodos);
- 
-- Retornadas como resultados de outra função;
-
-- Podem ter suas próprias propriedades.
-
-Para fazer uma função alto declarada em JS e só fazer assim:
- (function(passar os parâmetros)
- {Conteudo da função})
- (colocar os valores dos parâmetros), esse tipo de função tem como principal fundamento ser utilizado para não poluir a função global.
-
-
- - `arguments` é um objeto disponível em todas as funções JavaScript que contém os argumentos passados para a função.
-- Ele se parece com um array, mas não tem todos os métodos de array (como `map`, `forEach`).
-- `arguments` é útil para acessar todos os parâmetros passados, mesmo se a função não os definiu explicitamente.
-
-a propriedades arguments não funciona em arrow functions
-
-
-A propriedade COUNT serve para contar o numero de vezes que uma função ou objeto foi chamado EXEMPLO:
-function fn (){
-    fn.count++
-    console.log("Olá Mundo")
+// 1️⃣ Função nomeada
+function saudacao() {
+    console.log("Olá!");
 }
-fn.count = 0
-fn()
+saudacao();
+
+// 2️⃣ Função anônima (sem nome, atribuída a variável)
+const saudacao2 = function() {
+    console.log("Olá de novo!");
+};
+saudacao2();
+
+// 3️⃣ Arrow Function (sintaxe curta)
+const saudacao3 = () => console.log("Olá Arrow!");
+saudacao3();
+
+/*
+- Arrow function também pode ter várias linhas, mas usa chaves e return:
+*/
+const saudacao4 = () => {
+    console.log("Linha 1");
+    console.log("Linha 2");
+    return "Terminou";
+};
+console.log(saudacao4());
+
+/**
+ * Diferenças importantes entre função normal e arrow function:
+ * 
+ * 1️⃣ THIS
+ * - Função normal cria seu próprio this
+ * - Arrow function herda o this do contexto onde foi criada
+ * 
+ * 2️⃣ ARGUMENTS
+ * - Função normal tem o objeto arguments
+ * - Arrow function não tem arguments
+ * 
+ * 3️⃣ CONSTRUTOR
+ * - Função normal pode ser usada com new
+ * - Arrow function não pode ser usada como construtor
+ * 
+ * 4️⃣ HOISTING
+ * - Função normal sofre hoisting completo (pode chamar antes da linha de declaração)
+ * - Arrow function atribuída a variável NÃO sofre hoisting
+ */
+
+/*
+Exemplo de arguments
+-----------------------
+*/
+function soma() {
+    let total = 0;
+    for (let valor of arguments) {
+        total += valor;
+    }
+    return total;
+}
+console.log(soma(1, 2, 3, 4)); // 10
+
+// Arrow function não tem arguments
+// const somaArrow = () => { console.log(arguments); } // ERRO
+
+/*
+Funções como Objetos de Primeira Classe
+----------------------------------------
+Em JavaScript, funções são tratadas como objetos:
+- podem ser passadas como argumento
+- podem ser retornadas
+- podem ser atribuídas a variáveis ou propriedades de objetos
+- podem ter propriedades próprias
+*/
+
+// Exemplo de função como método (propriedade de objeto)
+const pessoa = {
+    falar: function() {
+        console.log("Oi!");
+    }
+};
+pessoa.falar();
+
+// Exemplo de função com propriedade própria
+function contarChamadas() {
+    contarChamadas.count++;
+    console.log("Função chamada!");
+}
+contarChamadas.count = 0;
+contarChamadas();
+console.log(contarChamadas.count); // 1
+
+/*
+Função Autoexecutável (IIFE)
+-----------------------------
+Executa assim que definida, evitando poluir o escopo global
+*/
+(function(msg) {
+    console.log(msg);
+})("Olá, IIFE!");
+
+
+/*
+Callback
+--------
+Uma função passada como argumento de outra função e chamada lá dentro
+*/
+function executar(callback) {
+    console.log("Executando...");
+    callback();
+}
+executar(() => console.log("Callback chamado!"));
+
+
+/*
+HOISTING
+----------
+"içamento" — as declarações são movidas para o topo do escopo.
+- funções declaradas com function são içadas por completo
+- var é içado mas inicializado como undefined
+- let e const são içados, mas ficam em zona morta (não podem ser usados antes)
+- arrow function atribuída a variável não sofre hoisting
+*/
+
+// Exemplo de hoisting de função tradicional
+digaOi();
+function digaOi() {
+    console.log("Oi hoisting!");
+}
+
+// Exemplo de hoisting com var
+console.log(a); // undefined
+var a = 5;
+
+// let/const
+// console.log(b); // erro
+let b = 10;
+
+// arrow function não sofre hoisting
+// saudacao5(); // erro
+const saudacao5 = () => console.log("Oi!");
+
+// resumo final
+/**
+ * ✔ Funções são blocos reutilizáveis
+ * ✔ Podem ser nomeadas, anônimas ou arrow
+ * ✔ Podem armazenar propriedades
+ * ✔ Podem ser passadas/retornadas de outras funções
+ * ✔ Podem ser autoexecutadas (IIFE)
+ * ✔ Funções tradicionais têm arguments
+ * ✔ São objetos de primeira classe no JS
+ * ✔ Hoisting funciona diferente dependendo do tipo
+ */

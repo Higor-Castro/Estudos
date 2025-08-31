@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLcollection_vs_NodeList</title>
+</head>
+<body>
+
+    <div class="container">
+        <p>teste 1</p>
+        <p>Lorem<a href="#">Link</a></p>
+        <p>teste 2</p>
+
+        <h2>Lista</h2>
+        <ul >
+            <li>Item 1</li>
+            <li>Item 2
+                <ul>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                    <li>Item 5</li>
+                    <li></li>
+                </ul>
+            </li>
+            <li>Item <a href="#">Link</a></li>
+
+        </ul>
+    </div>
+
+    <script>
+// Mostra o <body> do documento
+console.log("document.body:", document.body);
+
+// Mostra o elemento pai do <body>, que é o <html>
+console.log("document.body.parentElement:", document.body.parentElement);
+
+// Também mostra o pai do <body>, funciona igual acima
+console.log("document.body.parentNode:", document.body.parentNode);
+
+// Armazena o <html> em uma variável
+const html = document.body.parentElement;
+
+// Compara se parentElement e parentNode são iguais (true)
+console.log("parentElement === parentNode?", document.body.parentElement === document.body.parentNode);
+
+// O <html> não tem um pai do tipo Element (só Node), então retorna null
+console.log("html.parentElement (deve ser null):", html.parentElement);
+
+// Aqui retorna o pai do <html>, que é o próprio document (Node)
+console.log("html.parentNode (document):", html.parentNode);
+
+// Seleciona o elemento <h2>
+const h2 = document.querySelector("h2");
+
+// Pega o próximo elemento irmão do <h2>
+const h2nextElementSibling = h2.nextElementSibling;
+
+// Altera o estilo do próximo elemento irmão para fundo amarelo
+h2nextElementSibling.style.background = "yellow";
+
+// Mostra o próximo elemento irmão do <h2>
+console.log("Próximo irmão do h2 (nextElementSibling):", h2.nextElementSibling);
+
+// Mostra o elemento irmão anterior do <h2>, se houver
+console.log("Anterior ao h2 (previousElementSibling):", h2.previousElementSibling);
+
+// Seleciona a tag <a> (primeira encontrada)
+const link = document.querySelector("a");
+
+// Seleciona a <ul> que está dentro de outra <ul>
+const list = document.querySelector("ul ul");
+
+// Mostra o <a> selecionado
+console.log("Link selecionado:", link);
+
+// Mostra TODOS os nós filhos da lista (inclusive texto, espaços, etc)
+console.log("Todos os filhos de list (childNodes):", list.childNodes);
+
+// Mostra apenas os ELEMENTOS filhos da lista
+console.log("Elementos filhos de list (children):", list.children);
+
+// Mostra o PRIMEIRO filho do pai do link (pode ser texto)
+console.log("parentElement.firstChild:", link.parentElement.firstChild);
+console.log("→ Este é o firstChild (qualquer tipo de nó)");
+
+// Mostra o PRIMEIRO elemento filho do pai do link
+console.log("parentElement.firstElementChild:", link.parentElement.firstElementChild);
+console.log("→ Este é o firstElementChild (somente elementos HTML)");
+
+// Mostra o ÚLTIMO filho do pai do link (pode ser texto)
+console.log("parentElement.lastChild:", link.parentElement.lastChild);
+console.log("→ Este é o lastChild (qualquer tipo de nó)");
+
+// Mostra o ÚLTIMO elemento filho do pai do link
+console.log("parentElement.lastElementChild:", link.parentElement.lastElementChild);
+console.log("→ Este é o lastElementChild (somente elementos HTML)");
+
+// Verifica se o último elemento filho da lista tem filhos
+console.log("list.lastElementChild.hasChildNodes():", list.lastElementChild.hasChildNodes());
+console.log("→ Verifica se o último filho da lista tem filhos (true/false)");
+
+
+    </script>
+    
+</body>
+</html>

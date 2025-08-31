@@ -1,0 +1,43 @@
+      DOM
+Document Object Model
+
+O DOM é uma API disponibilizada nos Browser que nos permite edita o que é mostrado na tela
+
+em JS sempre quando estiver a espreção document pode ter certeza que esta falando do DOM 
+
+            Exemplo de DOM 
+
+<h1>Curso JavaScript completo 2018</h1>
+<main class="cmain" id="idmain">
+      <h2>Subtitulo</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, maiores nemo? Omnis deserunt qui minima harum excepturi non, 
+            ipsam hic aliquid dicta debitis facilis, aspernatur libero quia illum. Nam, laboriosam.</p>
+</main>
+<section class="csection" id="idsection">
+<h3>Subtitulo</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, maiores nemo? Omnis deserunt qui minima harum excepturi non, 
+      ipsam hic aliquid dicta debitis facilis, aspernatur libero quia illum. Nam, laboriosam.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, maiores nemo? Omnis deserunt qui minima harum excepturi non, 
+      ipsam hic aliquid dicta debitis facilis, aspernatur libero quia illum. Nam, laboriosam.</p>
+</section> 
+
+um belo exemplo de navegação do DOM e o seguinte
+
+let teste = getElementsbyTagName("idmain")
+teste.getElementsbyTagName("p")
+
+O código primeiro pega o elemento `<main>` pelo ID `"idmain"`, depois busca todos os `<p>` dentro dele. 
+Como os `<p>` estão dentro do `<main>`, eles são considerados seus filhos.
+
+quando for usar o "querySelector" para manipular o DOM ela só irar buscar um objeto, ou seja, ela ira pegar o primeiro objeto.  
+
+Para manipular o DOM precisar ter certeza que o HTML tenha cido totalmente lido no Browser.
+
+Para mosttrar todos os elementos filhos em JS e so usar o elemento "children" Já o elemento psi e só utilizar o "parentElement"
+
+O elemento "remove()" remove o elemento do DOM 
+
+O método "insertBefore()" é uma função da API do DOM usada para inserir um nó (elemento) antes de outro nó filho dentro de um elemento pai.
+parentNode.insertBefore(novoElemento, elementoDeReferencia);
+
+Para saber quando um checkbox foi ablitado só ver pela Propriedade "checked"

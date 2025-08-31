@@ -1,0 +1,25 @@
+    expressão ternária
+
+🧠 O que é isso?
+A estrutura:
+
+condição ? valorSeVerdadeiro : valorSeFalso
+é chamada de expressão ternária em JavaScript.
+Ela serve para escolher entre dois valores com base em uma condição.
+
+✅ Como funciona?
+Verifica a condição
+
+Se a condição for verdadeira, retorna o primeiro valor.
+
+Se a condição for falsa, retorna o segundo valor.
+
+🔍 Exemplo:
+let idade = 18;
+let podeEntrar = idade >= 18 ? "Sim" : "Não";
+console.log(podeEntrar); // Saída: Sim
+A condição idade >= 18 é verdadeira, então o resultado é "Sim".
+
+🗣️ Em português:
+"Se a idade for maior ou igual a 18, diga 'Sim'. Senão, diga 'Não'."
+

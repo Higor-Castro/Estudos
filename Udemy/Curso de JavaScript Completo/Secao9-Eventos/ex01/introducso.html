@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>
+        .container2{
+            background-color: #ccc;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos</h1>
+    <div id="container">
+        <button id="btn1">botão 1</button>
+        <button id="btn2">botão 2</button>
+        <button id="btn3">botão 3</button>
+    </div>
+    <hr>
+    <h1>Delegação de Eventos</h1>
+    <div class="container2">
+        <button>Botão 1</button>
+        <button>Botão 2</button>
+        <button>Botão 3</button>
+    </div>
+
+    
+    <script>
+  // Seleciona os botões pelo ID
+const btn1 = document.getElementById("btn1")
+const btn2 = document.getElementById("btn2")
+const btn3 = document.getElementById("btn3")
+
+// Função que será usada como handler em alguns eventos
+function clicou(){
+    console.log("Click funcao Clicou")
+}
+
+// Atribui um handler usando onclick com função anônima para btn1
+btn1.onclick = function(){
+    console.log("click btn1 funcao anonima")
+}
+// Sobrescreve o handler onclick do btn1 com a função clicou
+// IMPORTANTE: Com 'onclick' só existe um handler por evento, então esta última sobrescreve a anterior
+btn1.onclick = clicou
+
+// Adiciona múltiplos handlers para btn2 usando addEventListener
+btn2.addEventListener("click", clicou)  // Primeiro handler que chama função clicou
+btn2.addEventListener("click", function(){
+    console.log("click  funcao anonima")
+}) // Segundo handler com função anônima
+
+// Ainda atribui um handler via onclick no btn2
+// Essa mistura pode confundir, pois addEventListener suporta múltiplos handlers e onclick só um
+btn2.onclick = function(){
+    console.log("click btn2 funcao anonima")
+}
+
+// Adiciona handler ao btn3 que usa o objeto evento (chamado de 'stop' aqui)
+btn3.addEventListener("click", function(stop){
+    console.log(stop)  // Mostra o objeto evento no console
+    stop.stopPropagation()  // Impede que o evento suba para elementos-pai (parar propagação)
+    console.log("clicou no btn3 ")
+})
+
+// Evento no documento, captura qualquer clique na página
+document.addEventListener("click", function(e){
+    console.log("clicou no documento")
+    console.log(e.target)       // Elemento que realmente foi clicado
+    console.log(e.currentTarget)// Elemento que está executando o handler (document)
+    console.log(this)           // Também o document (função normal preserva contexto)
+})
+
+// Seleciona o container pelo ID e adiciona evento de clique
+const container = document.getElementById("container")
+container.addEventListener("click", function(){
+    console.log("clicou no container")
+})
+
+// Seleciona o container2 pela classe e todos os botões dentro dele
+const container2 = document.querySelector(".container2")
+const btns = document.querySelectorAll(".container2 button")
+console.log(btns);  // Mostra NodeList com os botões encontrados
+
+// Evento no container2 para delegar cliques dos botões filhos
+container2.addEventListener("click", function(event){
+    console.log("clicou no container 2")
+    console.log(event.target)       // Elemento real clicado (pode ser um botão)
+    console.log(event.currentTarget)// Elemento com o handler (container2)
+    console.log(this)               // Também container2 (função normal)
+
+    // Verifica se o elemento clicado é um botão (delegação)
+    if(event.target.nodeName === "BUTTON"){
+        // Aqui você pode executar código específico para botões dentro do container2
+        // Exemplo: console.log("clicou num botão dentro do container2")
+    }
+})
+
+
+    </script>
+</body>
+</html>

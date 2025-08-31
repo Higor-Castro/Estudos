@@ -1,0 +1,52 @@
+    HTMLCollection vs NodeList
+querySelectorAll() retorna uma NodeList (estática – não atualiza com o DOM).
+
+getElementsBy... (como getElementsByClassName, getElementsByTagName) retornam uma HTMLCollection (dinâmica – atualiza automaticamente com o DOM).
+
+childNodes também retorna uma NodeList, incluindo textos e comentários.
+
+HTMLCollection só contém elementos HTML.
+
+NodeList pode conter elementos, textos, comentários, etc.
+
+node.parentNode             // Nó pai do nó atual
+node.parentElement          // Elemento pai (null se não for elemento)
+node.childNodes             // NodeList com todos os nós filhos (texto, comentários, elementos)
+node.children               // HTMLCollection só com elementos filhos
+node.firstChild             // Primeiro nó filho (qualquer tipo)
+node.firstElementChild      // Primeiro filho que seja elemento
+node.lastChild              // Último nó filho (qualquer tipo)
+node.lastElementChild       // Último filho que seja elemento
+node.nextSibling            // Próximo nó irmão (qualquer tipo)
+node.nextElementSibling     // Próximo nó irmão que seja elemento
+node.previousSibling        // Nó irmão anterior (qualquer tipo)
+node.previousElementSibling // Nó irmão anterior que seja elemento
+node.hasChildNodes()        // Retorna true se tiver filhos
+node.isConnected            // Retorna true se o nó está conectado no documento
+node.nodeType               // Número indicando o tipo do nó (1 = Element, 3 = Text, etc)
+node.nodeName               // Nome do nó (ex: "DIV", "#text")
+node.nodeValue              // Valor do nó (texto para nós de texto, null para elementos)
+node.textContent            // Texto dentro do nó e seus filhos
+node.innerHTML              // Conteúdo HTML dentro do nó (apenas elementos)
+node.outerHTML              // Conteúdo HTML do nó e seu conteúdo (apenas elementos)
+
+node.appendChild(node)           // Adiciona um nó filho ao final
+node.insertBefore(newNode, refNode)  // Insere newNode antes de refNode
+node.removeChild(node)           // Remove um nó filho
+node.replaceChild(newNode, oldNode)  // Substitui oldNode por newNode
+node.cloneNode(deep)             // Clona o nó; deep=true clona toda a subárvore
+node.contains(node)              // Retorna true se o nó contém outro nó
+node.normalize()                 // Junta nós de texto adjacentes
+node.hasAttributes()             // True se nó tem atributos (elementos)
+node.getRootNode()               // Retorna o nó raiz do documento ou fragmento
+
+element.id                      // Id do elemento
+element.className               // String com classes do elemento
+element.classList               // Lista de classes com métodos add, remove, toggle
+element.getAttribute(name)      // Retorna valor do atributo
+element.setAttribute(name, val) // Define valor do atributo
+element.removeAttribute(name)   // Remove atributo
+
+node.addEventListener(event, func)     // Adiciona ouvinte de evento
+node.removeEventListener(event, func)  // Remove ouvinte de evento
+node.dispatchEvent(event)               // Dispara evento no nó

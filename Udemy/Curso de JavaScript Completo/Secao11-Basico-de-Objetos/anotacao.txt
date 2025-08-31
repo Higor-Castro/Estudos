@@ -1,0 +1,14 @@
+O que são objetos
+Tipos de dados que armazena coleção de dados (chave/valor).
+Uma array armazena dados ordenados, enquanto objetos armazenam dados não ordenados
+
+existe duas formas de criar objetos de forma literal e forma formal
+
+literal:
+const obj1 = {
+    Nome:"Higor"
+};
+
+formal:
+const obj2 = new Object();
+obj2.Nome = "Maria";
