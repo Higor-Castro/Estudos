@@ -25,9 +25,9 @@ public class Conexao {
     public static Connection getConexaoPostgres() throws ClassNotFoundException, SQLException {
         //Carregar Driver  e criar conexao
         String DRIVER = "org.postgresql.Driver";
-        String URL = "jdbc:postgresql://localhost:5432/aula_poo";
-        String USER = "postgres";
-        String PASSWORD = "postgres";
+        String URL = "jdbc:postgresql://localhost:5432/nome do seu banco";
+        String USER = "";
+        String PASSWORD = "";
         Class.forName(DRIVER);
         Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
         return con;
@@ -42,9 +42,9 @@ public class Conexao {
      */
     public static Connection getConexaoMySQL() throws ClassNotFoundException, SQLException {
         String DRIVER = "com.mysql.cj.jdbc.Driver";
-        String URL = "jdbc:mysql://localhost:3306/java";
-        String USER = "root";
-        String PASSWORD = "Mortadela.1";
+        String URL = "jdbc:mysql://localhost:3306/nome do seu banco";
+        String USER = "";
+        String PASSWORD = "";
         Class.forName(DRIVER);
         Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
         return con;

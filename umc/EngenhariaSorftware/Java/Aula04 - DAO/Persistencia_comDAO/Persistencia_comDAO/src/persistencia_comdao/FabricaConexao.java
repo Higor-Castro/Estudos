@@ -18,8 +18,8 @@ public class FabricaConexao {
     public static Connection getConexao() throws ClassNotFoundException, SQLException {
         //Verificar em seu computador
         String DRIVER = "com.mysql.cj.jdbc.Driver";
-        String URL = "jdbc:mysql://localhost:3306/aula_ioo"; //Verificar em seu computador
-        String USERNAME = "root"; //Verificar em seu computador
+        String URL = "jdbc:mysql://localhost:3306/ nome do seu banco"; //Verificar em seu computador
+        String USERNAME = ""; //Verificar em seu computador
         String PASSWORD = ""; //Verificar em seu computador
         
         // O método forName carrega e inicia o driver passado por parâmetro

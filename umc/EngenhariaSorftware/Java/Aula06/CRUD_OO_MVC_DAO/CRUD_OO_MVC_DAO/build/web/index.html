@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>CRUD OO MVC DAO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript">
+            function carregarconsultartodos() {
+                window.location = "/CRUD_OO_MVC_DAO/controle_produto?op=CONSULTAR TODOS"
+            }
+        </script>
+    </head>
+    <body>
+        <form name="f1" action="controle_produto" method="GET">
+            <div><h1>CRUD PRODUTO</h1></div>
+            ID.........: <input type="text" name="txtid"><BR>
+            DESCRIÇÃO..: <input type="text" name="txtdescricao"><BR>
+            PREÇO......: <input type="text" name="txtpreco"><BR><BR>
+            <input type="submit" name="op" value="CADASTRAR">
+            <input type="submit" name="op" value="DELETAR">
+            <input type="submit" name="op" value="ATUALIZAR">
+            <input type="submit" name="op" value="CONSULTAR BY ID">
+            <input type="submit" name="op" value="CONSULTAR TODOS">
+        </form>
+    </body>
+</html>
