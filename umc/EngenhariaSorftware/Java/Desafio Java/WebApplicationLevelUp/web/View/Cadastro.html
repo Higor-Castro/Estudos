@@ -1,44 +1,41 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Meta e Recomendações</title>
-
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>Cadastrar Meta e Recomendações</h2>
 
     <form action="/WebApplicationLevelUp/Controll" method="post">
-        <!-- Dados da Meta -->
         <fieldset>
-            <legend>Dados da Meta</legend>
+            <legend>Dados do Usuário</legend>
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" required><br>
+            <input type="text" name="nome" required>
 
             <label for="cargo">Cargo:</label>
-            <input type="text" name="cargo" required><br>
+            <input type="text" name="cargo" required>
 
             <label for="departamento">Departamento:</label>
-            <input type="text" name="departamento" required><br>
+            <input type="text" name="departamento" required>
 
             <label for="email">Email:</label>
-            <input type="email" name="email" required><br>
+            <input type="email" name="email" required>
 
-            
             <label for="registro">Registro:</label>
-            <input type="text" name="registro" required><br>
+            <input type="text" name="registro" required>
+        </fieldset>
 
+        <fieldset>
+            <legend>Dados da Meta</legend>
             <label for="titulo">Título da Meta:</label>
-            <input type="text" name="titulo" required><br>
+            <input type="text" name="titulo" required>
 
             <label for="descricao">Descrição da Meta:</label>
-            <textarea name="descricao" required></textarea><br>
-            
+            <textarea name="descricao" required></textarea>
+
             <label for="frequencia">Frequência:</label>
             <select name="frequencia" required>
                 <option value="">Selecione...</option>
@@ -46,13 +43,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 <option value="semanal">Semanal</option>
                 <option value="mensal">Mensal</option>
             </select>
-            
+
             <label for="etapas">Quantidade de Etapas:</label>
-            <input type="number" id="etapas" name="etapas" onInput="gerarCampos()" required><br>
-  
+            <input type="number" id="etapas" name="etapas" onInput="gerarCampos()" required>
         </fieldset>
 
-        <!-- Recomendações Dinâmicas -->
         <div id="recomendacoes"></div>
 
         <button type="submit" name="ButAction" value="Cadastra">Salvar Meta + Recomendações</button>
@@ -69,20 +64,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                     <fieldset>
                         <legend>Etapa ${i}</legend>
                         <label for="titulo_${i}">Título:</label>
-                        <input type="text" name="titulo_${i}" required><br>
+                        <input type="text" name="titulo_${i}" required>
 
                         <label for="descricao_${i}">Descrição:</label>
-                        <textarea name="descricao_${i}" required></textarea><br>
+                        <textarea name="descricao_${i}" required></textarea>
 
                         <label for="url_${i}">URL do curso:</label>
-                        <input type="url" name="url_${i}" required><br>
+                        <input type="url" name="url_${i}" required>
 
                         <input type="hidden" name="etapa_${i}" value="${i}">
                     </fieldset>
                     <br>
                 `;
             }
-            
         }
     </script>
 </body>

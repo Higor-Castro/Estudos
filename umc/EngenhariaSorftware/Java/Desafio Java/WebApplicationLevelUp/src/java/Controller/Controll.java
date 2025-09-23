@@ -41,7 +41,7 @@ public class Controll extends HttpServlet {
                 String pageAction = commandAction.executar(request, response);
                 request.getRequestDispatcher(pageAction).forward(request, response);
             } catch (Exception e) {
-                String msg = "Erro 88" + e;
+                String msg = "Erro:" + e;
                 request.setAttribute("msg", msg);
                 request.getRequestDispatcher("resultado.jsp").forward(request, response);
             }

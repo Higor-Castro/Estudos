@@ -20,7 +20,6 @@ CREATE TABLE metas (
     etapaAtual INT,
     registro_usuario VARCHAR(20),
     dataCriacao TIMESTAMP NOT NULL,
-    progresso INT,
     frequencia VARCHAR(20),
     FOREIGN KEY (registro_usuario) REFERENCES usuarios(registro)
 );
@@ -30,7 +29,7 @@ CREATE TABLE recomendacoes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(200) NOT NULL,
     descricao TEXT,
-    urlCurso VARCHAR(200),
+    urlCurso TEXT,
     etapa INT,
     id_meta INT,
     FOREIGN KEY (id_meta) REFERENCES metas(id)

@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -50,5 +52,48 @@ public class recomendacaoDao {
     }
     
 
+    // Consulta todas as recomendações de uma meta específica
+    public List<Recomendacao> consultarByMetaId(int MetaId) throws ClassNotFoundException, SQLException {
+        List<Recomendacao> recomendacoes = new ArrayList<>();
+
+        String sql = "SELECT * FROM recomendacoes WHERE id_meta = ?";
+
+        try (Connection con = Conexao.conectar();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            
+            
+            ps.setInt(1, MetaId);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Recomendacao r = Recomendacao.builder()
+                            .comTitulo(rs.getString("titulo"))
+                            .comDescricao(rs.getString("descricao"))
+                            .comUrlCurso(rs.getString("urlCurso"))
+                            .comEtapa(rs.getInt("etapa"))
+                            .comMetaId(rs.getInt("id_meta"))
+                            .constroi();
+                    recomendacoes.add(r);
+                }
+            }
+        }
+
+        return recomendacoes;
+    }
     
+    public void deletar(Connection con, int metaId) throws SQLException {
+        String sql = "DELETE FROM recomendacoes WHERE id_meta = ?";
+        try (PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setInt(1, metaId);
+            ps.executeUpdate();
+        }
+    }
+
+
+
+
+
+
+
+  
 }

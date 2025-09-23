@@ -16,7 +16,7 @@ public class Usuario {
     private String email;
 
     // Construtor privado para usar apenas com Builder
-    private Usuario() {}
+    public Usuario() {}
 
     // Getters
     public String getRegistro() {
@@ -38,6 +38,13 @@ public class Usuario {
     public String getEmail() {
         return email;
     }
+    
+    // set Registro
+
+    public void setRegistro(String registro) {
+        this.registro = registro;
+    }
+    
 
     // Método para iniciar o Builder
     public static UsuarioBuilder builder() {

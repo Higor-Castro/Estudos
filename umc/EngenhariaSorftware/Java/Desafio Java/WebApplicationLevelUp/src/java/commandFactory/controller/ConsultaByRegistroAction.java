@@ -2,23 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.com.commandfactory.controller;
-
-
+package commandFactory.controller;
+import Model.Dao.MetaDao;
+import Model.Meta;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Model.Dao.MetaDAo;
-
 
 /**
  *
- * @author ptoledo
+ * @author higor
  */
-public class ConsultaByIdProdutoAction implements ICommand {
-
+public class ConsultaByRegistroAction implements ICommand{
 @Override
 public String executar(HttpServletRequest request, HttpServletResponse response) {
     String registro = request.getParameter("registro");
@@ -27,12 +24,13 @@ public String executar(HttpServletRequest request, HttpServletResponse response)
 
     try {
         metas = metaDao.consultarByRegistro(registro);
-        request.setAttribute("metas", metas);
+        request.setAttribute("metas", metas); 
     } catch (ClassNotFoundException | SQLException ex) {
         System.out.println("ERRO: " + ex.getMessage());
     }
 
-    return "resultadoconsultartodos.jsp";
+    return "Metas.jsp";
 }
 
+    
 }

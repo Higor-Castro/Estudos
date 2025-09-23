@@ -78,9 +78,8 @@ public class CadastraAction implements ICommand{
                         .comTitulo(tituloMeta)
                         .comDescricao(descricaoMeta)
                         .comEtapas(qtdEtapas)
-                        .comEtapaAtual(0)
+                        .comEtapaAtual(1)
                         .comUsuario(usuario)
-                        .comProgresso(0)
                         .comFrequencia(frequencia)
                         .constroi();
 

@@ -5,7 +5,7 @@
 package Model;
 import Model.Usuario;
 import Model.Recomendacao;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -25,7 +25,7 @@ public class Meta {
     private String frequencia;                   // qualquer anotação simples da meta
 
     // Construtor privado para usar apenas com Builder
-    private Meta() {}
+    public Meta() {}
 
     // Getters
     public int getId() { return id; }
@@ -36,13 +36,19 @@ public class Meta {
     public Usuario getUsuario() { return usuario; }
     public List<Recomendacao> getRecomendacoes() { return recomendacoes; }
     public Timestamp getDataCriacao() { return dataCriacao; }
-    public int getProgresso() { return progresso; }
+    
+    public int getProgresso() {     
+        if (getEtapas() > 0) {
+        this.progresso = (int) (((double) getEtapaAtual() / getEtapas()) * 100);
+    } else {
+        this.progresso = 0;
+    }   return this.progresso; }
     public String getFrequencia() { return frequencia; }
     
-    // set id
-
+    // set ido
     public void setId(int id) { this.id = id;}
     
+   
 
     // Método para iniciar o Builder
     public static MetaBuilder builder() {
@@ -65,11 +71,12 @@ public class Meta {
         public MetaBuilder comUsuario(Usuario usuario) { meta.usuario = usuario; return this; }
         public MetaBuilder comRecomendacoes(List<Recomendacao> recomendacoes) { meta.recomendacoes = recomendacoes; return this; }
         public MetaBuilder comDataCriacao(Timestamp dataCriacao) { meta.dataCriacao = dataCriacao; return this; }
-        public MetaBuilder comProgresso(int progresso) { meta.progresso = progresso; return this; }
         public MetaBuilder comFrequencia(String frequencia) { meta.frequencia = frequencia; return this; }
 
         public Meta constroi() { return meta; }
     }
+
+
 
 }
 
