@@ -71,6 +71,7 @@ public class recomendacaoDao {
                             .comDescricao(rs.getString("descricao"))
                             .comUrlCurso(rs.getString("urlCurso"))
                             .comEtapa(rs.getInt("etapa"))
+                            .comId(rs.getInt("id"))
                             .comMetaId(rs.getInt("id_meta"))
                             .constroi();
                     recomendacoes.add(r);
@@ -88,6 +89,24 @@ public class recomendacaoDao {
             ps.executeUpdate();
         }
     }
+    
+    
+    public boolean atualizar(Recomendacao recomendacao) throws ClassNotFoundException, SQLException {
+         try {
+            Connection con = Conexao.conectar();
+            PreparedStatement comando = con.prepareStatement("update recomendacoes set titulo = ?, descricao = ?, urlCurso = ? where id = ?");
+            comando.setString(1, recomendacao.getTitulo());
+            comando.setString(2, recomendacao.getDescricao());
+            comando.setString(3, recomendacao.getUrlCurso());
+            comando.setInt(4, recomendacao.getId());
+            comando.execute();
+            con.close();
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Erro: " + ex.getMessage());
+            return false;
+        }
+    } 
 
 
 

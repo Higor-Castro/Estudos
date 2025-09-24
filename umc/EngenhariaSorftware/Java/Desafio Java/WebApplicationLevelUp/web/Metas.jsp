@@ -64,7 +64,10 @@
     %>
 
     <div class="acoes">
-        <button onclick="alterarDisplay()" class="btn btn-warning" >✏️ Alterar</button>
+        <div class="form">
+            <button onclick="alterarDisplay()" class="btn btn-warning" >✏️ Alterar</button>
+        </div>
+        
 
         <form action="Controll" method="post">
             <input type="hidden" name="id" value="<%= meta.getId() %>"/>
@@ -102,6 +105,12 @@
         <label>Descrição:</label>
         <textarea name="descricao"><%= meta.getDescricao() %></textarea>
         <p><strong>Etapa:</strong> <%= meta.getEtapas() %></p> <br>
+        <select name="frequencia" required>
+                <option value="">Selecione...</option>
+                <option value="diaria">Diária</option>
+                <option value="semanal">Semanal</option>
+                <option value="mensal">Mensal</option>
+        </select>
         <hr>
         <h3>📚 Recomendação da Etapa Atual</h3>
         <%
@@ -133,7 +142,7 @@
 
         <!-- BOTÃO SALVAR -->
         <div class="acoes">
-            <button type="submit" name="ButAction" value="SalvarEdicao" class="btn btn-success">
+            <button type="submit" name="ButAction" value="Alterar" class="btn btn-success">
                 💾 Salvar
             </button>
              <button type="button" class="btnFechar">

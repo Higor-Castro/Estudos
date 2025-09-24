@@ -72,6 +72,25 @@ public class UsuarioDao {
             ps.executeUpdate();
         }
     }
+    
+    public boolean atualizar(Usuario usuario) throws ClassNotFoundException, SQLException {
+        try {
+                Connection con = Conexao.conectar();
+                PreparedStatement comando = con.prepareStatement("update usuarios set nome = ?, email = ?, cargo = ?, departamento = ? where registro = ?");
+                comando.setString(1, usuario.getNome());
+                comando.setString(2, usuario.getEmail());
+                comando.setString(3, usuario.getCargo());
+                comando.setString(4, usuario.getDepartamento());
+                comando.setString(5, usuario.getRegistro());
+                comando.execute();
+                con.close();
+                return true;
+        } catch (SQLException ex) {
+            System.out.println("Erro: " + ex.getMessage());
+            return false;
+        }
+    } 
+
 
 
 

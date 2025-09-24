@@ -126,6 +126,23 @@ public class MetaDao {
             return false; // erro geral
         }
     }
+    
+    public boolean atualizar(Meta meta) throws ClassNotFoundException, SQLException {
+        try {  
+                Connection con = Conexao.conectar();
+                PreparedStatement comando = con.prepareStatement("update metas set titulo = ?, descricao = ?, frequencia = ? where id = ?");
+                comando.setString(1, meta.getTitulo());
+                comando.setString(2, meta.getDescricao());
+                comando.setString(3, meta.getFrequencia());
+                comando.setInt(4, meta.getId());
+                comando.execute();
+                con.close();
+                return true;
+        } catch (SQLException ex) {
+            System.out.println("Erro: " + ex.getMessage());
+            return false;
+        }
+    } 
 
 
 
