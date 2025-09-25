@@ -143,7 +143,20 @@ public class MetaDao {
             return false;
         }
     } 
-
+    public boolean atualizarEtapa(int idMeta, int novaEtapa) throws ClassNotFoundException, SQLException {
+        try {  
+                Connection con = Conexao.conectar();
+                PreparedStatement comando = con.prepareStatement("UPDATE metas SET etapaAtual = ? WHERE id = ?");
+                comando.setInt(1, novaEtapa);
+                comando.setInt(2, idMeta);
+                comando.execute();
+                con.close();
+                return true;
+        } catch (SQLException ex) {
+            System.out.println("Erro: " + ex.getMessage());
+            return false;
+        }
+    }
 
 
 

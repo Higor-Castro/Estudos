@@ -77,8 +77,10 @@
         
 
         <form action="Controll" method="post">
-            <input type="hidden" name="id" value="<%= meta.getId() %>"/>
-            <button type="submit" name="ButAction" value="Deletar" class="btn">➡️ Próxima Etapa</button>
+            <input type="hidden" name="idMeta" value="<%= meta.getId() %>"/>
+            <input type="hidden" name="etapas" value="<%= meta.getEtapas()%>"/>
+            <input type="hidden" name="etapaAtual" value="<%= meta.getEtapaAtual()%>"/>
+            <button type="submit" name="ButAction" value="ProximaEtapa" class="btn">➡️ Próxima Etapa</button>
         </form>
     </div>
 </div>
