@@ -3,14 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
+    <title>LevelUp - Sistema de Metas</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <h1>📌 Sistema LevelUp</h1>
-    <div class="links">
-        <a href="View/Cadastro.html">Cadastrar Meta</a>
-        <a href="View/ConsultaByRegistro.html">Consultar Metas</a>
-    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">🚀 LevelUp</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="Cadastro.html">Cadastrar Meta</a></li>
+                <li><a href="ConsultaByRegistro.html">Consultar Metas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>📌 Bem-vindo ao <span class="highlight">LevelUp</span></h1>
+            <p>🚀 Transforme suas <strong class="highlight">metas</strong> em <strong class="highlight">resultados</strong>!  
+               Organize suas etapas, acompanhe seu <span class="highlight">progresso</span> e evolua diariamente!</p>
+            <a class="btn" href="Cadastro.html">Começar Agora</a>
+        </section>
+
+        <!-- Cards de Ações -->
+        <section class="cards-container">
+            <div class="card-action">
+                <h2>➕ Cadastrar Meta</h2>
+                <p>Crie suas metas, defina etapas e acompanhe cada progresso de forma prática.</p>
+                <a class="btn" href="Cadastro.html">Cadastrar</a>
+            </div>
+            <div class="card-action">
+                <h2>🔎 Consultar Metas</h2>
+                <p>Visualize todas suas metas cadastradas, acompanhe etapas concluídas e planeje seus próximos passos.</p>
+                <a class="btn" href="ConsultaByRegistro.html">Consultar</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 LevelUp - Sistema de Metas | Desenvolvido por Higor Castro</p>
+    </footer>
+
 </body>
 </html>

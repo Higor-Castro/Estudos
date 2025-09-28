@@ -1,5 +1,6 @@
--- Criação do banco de dados
+
 CREATE DATABASE IF NOT EXISTS levelUp;
+
 USE levelUp;
 
 -- Tabela de usuários
@@ -9,7 +10,7 @@ CREATE TABLE usuarios (
     email VARCHAR(100),
     cargo VARCHAR(100),
     departamento VARCHAR(100)
-);
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 -- Tabela de metas
 CREATE TABLE metas (
@@ -22,7 +23,7 @@ CREATE TABLE metas (
     dataCriacao TIMESTAMP NOT NULL,
     frequencia VARCHAR(20),
     FOREIGN KEY (registro_usuario) REFERENCES usuarios(registro)
-);
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 -- Tabela de recomendações
 CREATE TABLE recomendacoes (
@@ -33,8 +34,10 @@ CREATE TABLE recomendacoes (
     etapa INT,
     id_meta INT,
     FOREIGN KEY (id_meta) REFERENCES metas(id)
-);
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 -- Exemplo de consulta
 SELECT * FROM recomendacoes;
+
+
 

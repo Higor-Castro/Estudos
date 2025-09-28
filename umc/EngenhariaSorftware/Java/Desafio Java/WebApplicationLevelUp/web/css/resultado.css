@@ -1,0 +1,28 @@
+/* Card de mensagem */
+.card-message {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    padding: 30px 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #1e3a8a;
+}
+
+.card-message .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #3b82f6;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.card-message .btn:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}

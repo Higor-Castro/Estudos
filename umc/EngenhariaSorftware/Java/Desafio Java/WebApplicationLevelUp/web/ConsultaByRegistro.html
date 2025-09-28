@@ -1,12 +1,11 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-    <%@page import="java.util.*"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Resultado do Processo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta por Registro</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/resultado.css">
+    <link rel="stylesheet" href="css/consulta.css">
 </head>
 <body>
 
@@ -24,13 +23,16 @@
 
     <!-- Conteúdo principal -->
     <main>
-        <div class="hero">
-            <h2>📢 Resultado do Processo</h2>
-            <div class="card card-message">
-                <p><%= request.getAttribute("msg") %></p>
-                <a href="index.html" class="btn">🏠 Voltar ao Início</a>
-            </div>
-        </div>
+        <h2>Consultar Metas por Registro</h2>
+
+        <form action="Controll" method="post">
+            <fieldset>
+                <legend>Digite seu Registro</legend>
+                <label for="registro">Registro:</label>
+                <input type="text" name="registro" required>
+            </fieldset>
+            <button type="submit" name="ButAction" value="ConsultaByRegistro">Consultar</button>
+        </form>
     </main>
 
     <!-- Footer padrão -->

@@ -15,13 +15,18 @@ import java.sql.SQLException;
 public class Conexao {
         // Método responsável por estabelecer a conexão com o banco de dados
     public static Connection conectar() throws ClassNotFoundException, SQLException {
-        //MySQL
+        // MySQL
         // O método forName carrega e inicia o driver passado por parâmetro
         Class.forName("com.mysql.cj.jdbc.Driver");
-        String URL = "jdbc:mysql://localhost:3306/levelUp";
+
+        // URL com UTF-8
+        String URL = "jdbc:mysql://localhost:3306/levelUp?useUnicode=true&characterEncoding=UTF-8";
+
         String USER = "root";
         String PASSWORD = "Mortadela.1";
+
         // Estabelecendo a conexão
         return DriverManager.getConnection(URL, USER, PASSWORD);
+
     }
 }
