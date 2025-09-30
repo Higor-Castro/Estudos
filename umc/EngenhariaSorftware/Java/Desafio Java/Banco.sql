@@ -1,6 +1,5 @@
 
 CREATE DATABASE IF NOT EXISTS levelUp;
-
 USE levelUp;
 
 -- Tabela de usuários
@@ -37,7 +36,7 @@ CREATE TABLE recomendacoes (
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 -- Exemplo de consulta
-SELECT * FROM recomendacoes;
+SELECT * FROM metas;
 
 
 

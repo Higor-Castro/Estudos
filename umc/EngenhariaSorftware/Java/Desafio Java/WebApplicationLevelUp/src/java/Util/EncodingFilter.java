@@ -16,17 +16,14 @@ public class EncodingFilter implements Filter {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
 
-        // Não força sempre text/html, deixa o container definir o correto
         chain.doFilter(request, response);
     }
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        // Pode deixar vazio se não precisar configurar nada
     }
 
     @Override
     public void destroy() {
-        // Pode deixar vazio se não precisar liberar recursos
     }
 }
