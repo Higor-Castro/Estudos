@@ -1,4 +1,6 @@
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %>
 <%@ page import="Model.Meta" %>
 <%@ page import="Model.Recomendacao" %>
 <%@ page import="Model.Solid_Liskov.Recompensa" %>
@@ -10,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Completo - LevelUp</title>
     <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/Desempenho.css">
+    <link rel="stylesheet" href="css/Desempenho.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -31,6 +33,11 @@
 <%
     List<Meta> metas = (List<Meta>) request.getAttribute("metas");
     Recompensa recompensa = (Recompensa) request.getAttribute("recompensa");
+    Map<Integer, Integer> tempos = (Map<Integer, Integer>) request.getAttribute("tempos");
+
+    if (tempos == null) {
+        tempos = new HashMap<>(); // garante que o Map nunca seja nulo
+    }
 
     if (metas != null && !metas.isEmpty()) {
         int totalProgresso = 0;
@@ -54,6 +61,7 @@
             <h3>🏆 Sua Recompensa!</h3>
             <p><strong>Nível:</strong> <%= recompensa.getNivel() %></p>
             <p><%= recompensa.getMensagem() %></p>
+            <p><%= request.getAttribute("Motivacional") %></p>
         </div>
     </div>
 
@@ -74,6 +82,8 @@
                 <h4><%= meta.getTitulo() %></h4>
                 <p><strong>Descrição:</strong> <%= meta.getDescricao() %></p>
                 <p><strong>Etapa:</strong> <%= meta.getEtapaAtual() %> / <%= meta.getEtapas() %></p>
+                <p><strong>Tempo Estimado:</strong> <%= tempos.getOrDefault(meta.getId(), 0) %> dias</p>
+ <!-- corrigido -->
                 <div class="progress">
                     <div class="progress-bar" style="width:<%= meta.getProgresso() %>%">
                         <%= meta.getProgresso() %>%
@@ -114,7 +124,7 @@
 
 </main>
 
-<footer style="text-align:center; padding:15px; background:#2c3e50; color:white;">
+<footer ">
     <p>&copy; 2025 LevelUp - Sistema de Metas | Desenvolvido por Higor Castro</p>
 </footer>
 
