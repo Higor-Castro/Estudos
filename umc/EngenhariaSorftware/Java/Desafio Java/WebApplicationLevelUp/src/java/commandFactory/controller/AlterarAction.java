@@ -10,6 +10,9 @@ import Model.Meta;
 import Model.Recomendacao;
 import Model.Usuario;
 import Model.Dao.UsuarioDao;
+import Model.Decorator.INotifier;
+import Model.Decorator.MailDecorator;
+import Model.Decorator.Notifier;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 /**
@@ -107,6 +110,9 @@ public class AlterarAction implements ICommand{
               // Define a mensagem final
         if(metaSalva && recomendacaoSalva){
             msg = "Meta e recomendações Atulizada com sucesso!";
+            INotifier notify = new Notifier(usuario);
+            notify = new MailDecorator(notify, usuario);
+            notify.send(msg);
         } else if(metaSalva){
             msg = "Meta Atulizada, mas houve erro ao Atulizar recomendações!";
         } else {

@@ -1,7 +1,7 @@
 package commandFactory.controller;
 
-import Model.DIP.Tempo;
-import Model.DIP.EscolherRegra;
+import Model.Solid_DIP.Tempo;
+import Model.Solid_DIP.EscolherRegra;
 import Model.Dao.MetaDao;
 import Model.Meta;
 import Model.Solid_Liskov.Desempenho;

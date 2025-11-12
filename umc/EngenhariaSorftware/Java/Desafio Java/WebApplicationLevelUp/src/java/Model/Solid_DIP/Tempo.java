@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Model.DIP;
+package Model.Solid_DIP;
 
 import Model.Meta;
+import Model.Solid_DIP.RegraDeCalculo;
 import java.util.List;
 
 /**

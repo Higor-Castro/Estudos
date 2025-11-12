@@ -10,6 +10,9 @@ import Model.Meta;
 import Model.Recomendacao;
 import Model.Usuario;
 import Model.Dao.UsuarioDao;
+import Model.Decorator.INotifier;
+import Model.Decorator.MailDecorator;
+import Model.Decorator.Notifier;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -127,11 +130,17 @@ public class CadastraAction implements ICommand{
         // Define a mensagem final
         if(metaSalva && sucessoRecomendacoes){
             msg = "Meta e recomendações cadastradas com sucesso!";
+            INotifier notify = new Notifier(usuario);
+            notify = new MailDecorator(notify, usuario);
+            notify.send(msg);
         } else if(metaSalva){
             msg = "Meta cadastrada, mas houve erro ao salvar algumas recomendações!";
         } else {
             msg = "Erro ao cadastrar Meta e recomendações!";
         }
+        
+
+
 
         request.setAttribute("msg", msg );
         return "resultado.jsp"; // Página final que mostra a mensagem
