@@ -22,8 +22,8 @@ public class Conexao {
         // URL com UTF-8
         String URL = "jdbc:mysql://localhost:3306/levelUp?useUnicode=true&characterEncoding=UTF-8";
 
-        String USER = "root";
-        String PASSWORD = "Mortadela.1";
+        String USER = "";
+        String PASSWORD = "";
 
         // Estabelecendo a conexão
         return DriverManager.getConnection(URL, USER, PASSWORD);

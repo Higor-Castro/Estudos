@@ -33,8 +33,8 @@ public class MailDecorator extends BaseNotifierDecorator {
             return;
         }
 
-        String remetente = "testejava75@gmail.com";
-        String senha = "cblymnarnwcwijrs"; // App password
+        String remetente = "";
+        String senha = ""; 
         String destinatario = usuario.getEmail();
 
         try {
